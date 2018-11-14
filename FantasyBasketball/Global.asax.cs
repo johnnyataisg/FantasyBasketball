@@ -5,6 +5,10 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Data.Entity;
+using FantasyBasketball.Models;
+using FantasyBasketball.DAL;
+
 
 namespace FantasyBasketball
 {
@@ -12,6 +16,8 @@ namespace FantasyBasketball
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<NBAContext>(null);
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
